@@ -1,9 +1,4 @@
----
-title: "README"
-output: html_document
----
-
-# Forest bases HTE estimators
+# Forest based HTE estimators
 
 Here we (attempt to) replicate and extend the findings in the [seminal paper](https://doi.org/10.1214/23-AOAS1799) by Dandl et.al.
 
