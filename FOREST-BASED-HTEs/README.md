@@ -7,7 +7,7 @@ Here we (attempt to) replicate and extend the findings in the [seminal paper](ht
 A lot of the code is forked/copied from [https://github.com/dandls/htesim](https://github.com/dandls/htesim)
 
 
-We added the [fun.doubleml_hte(https://github.com/codeandstats/when-ML-met-HTEs/blob/d4085c36702dae2f26baa50e8c14b711b3ec1e9e/FOREST-BASED-HTEs/run.R#L286)]() function with [explanations](https://github.com/codeandstats/when-ML-met-HTEs/blob/main/FOREST-BASED-HTEs/doubleml_hte.md).
+We added the [fun.doubleml_hte()](https://github.com/codeandstats/when-ML-met-HTEs/blob/d4085c36702dae2f26baa50e8c14b711b3ec1e9e/FOREST-BASED-HTEs/run.R#L286) function with [explanations](https://github.com/codeandstats/when-ML-met-HTEs/blob/main/FOREST-BASED-HTEs/doubleml_hte.md).
 
 # How to use this REPO?
 
