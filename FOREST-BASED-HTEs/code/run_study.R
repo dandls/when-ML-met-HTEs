@@ -13,9 +13,9 @@ source("DGP.R")
 source("run.R")
 
 # Check if the file exists
-if (file.exists(resname)) {
-  stop("Error: The file 'results/results_study.rds' already exists. Create new study in def.R")
-}
+#if (file.exists(resname)) {
+#  stop("Error: The file 'results/results_study.rds' already exists. Create new study in def.R")
+#}
 
 #-------
 # 1) Setup DGP
@@ -147,7 +147,7 @@ if (!is.null(oldresdf)) {
 saveRDS(res, file = resname)
 
 # 9) Plot results
-source("create_plots_tables.R")
+# source("create_plots_tables.R")
 
 
 
