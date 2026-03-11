@@ -1,16 +1,30 @@
 #### Plot results #####
+BERLINRESULTS = FALSE
 
-dml_study_name <- "doubleml"
-other_study_name <-  "other_methods"
-res.folder <- "results"
-source("def.R") # TODO: here you should specify "study_name
-source("setup.R")
+if (BERLINRESULTS) {
+  dml_study_name <- "doubleml"
+  other_study_name <-  "other_methods"
+} else {
+  resnam <- "all_repl40"
+}
+
+res.folder <- "../results"
+methodnams <- c("mob", "equalized", "mobcf",
+  "cf", "doubleml")
 
 #---- Load data ----
-res.folder = "results"
-dml_df <- readRDS(file.path(res.folder, paste0(dml_study_name,".rds")))
-other_df <- readRDS(file.path(res.folder, paste0(other_study_name,".rds")))
-resall <-  rbind(dml_df, other_df)
+if (BERLINRESULTS) {
+  dml_df <- readRDS(file.path(res.folder, paste0(dml_study_name,".rds")))
+  other_df <- readRDS(file.path(res.folder, paste0(other_study_name,".rds")))
+  resall <-  rbind(dml_df, other_df)
+} else {
+  resall <- readRDS(file.path(res.folder, paste0(resnam,".rds")))
+}
+
+methodnams <- methodnams[methodnams %in% unique(resall$algorithm)]
+
+source("def.R") # TODO: here you should specify "study_name
+source("setup.R")
 
 #---- Setup by Nie and Wager (2020) ----
 res <- resall[resall$setup %in% 1:4,]
