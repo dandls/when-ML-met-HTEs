@@ -5,7 +5,8 @@
 
 res <- readRDS("comparison_res.rds")
 
-pdf("comparisonplot.pdf", width = 5, height = 4)
+png("comparisonplot.png", width = 400, height = 350)
+#pdf("comparisonplot.pdf", width = 5, height = 4)
 plot(res$value, res$result.res, xlab = "old", ylab = "new")
 abline(0, 1)
 dev.off()
@@ -30,7 +31,7 @@ which(compres$result.res == compres$results.res.berlin)
 # no clear differences!!
 pdf("comparisonplot_berlin_all.pdf", width = 10, height = 4)
 par(mfrow = c(1,2))
-boxplot(res$result.res[res$setup.x == "A"], ylim = c(0, 0.5), main = "Setup A, old")
-boxplot(berlinres$result.res.berlin[berlinres$setup == 1], ylim = c(0, 0.5), main = "Setup A, new berlin")
+boxplot(res$result.res[res$setup.x == "A" & res$nsim.x == 1600], ylim = c(0, 0.5), main = "Setup A, old")
+boxplot(berlinres$result.res.berlin[berlinres$setup == 1 & berlinres$nsim == 1600], ylim = c(0, 0.5), main = "Setup A, new berlin")
 dev.off()
 

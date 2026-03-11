@@ -129,24 +129,20 @@ refactor <- function(df, method.nams) {
 }
 
 # Names of methods to show
-methodnams <- c(
-  "mob", "hybrid",
-  "equalized", "mobcf",
-  "cf", "doubleml"
-  )
+lookup <- lookup[methodnams]
 colornams <- lookup[methodnams]
 
 # also show honest versions?
-if (HONESTY) {
-  methodnams <- c(
-    "mob",  "hybrid", "equalized", "mobcf",
-    "cf",
-    "mobhonest", "hybridhonest", "equalizedhonest", "mobcfhonest",
-    "cfhonest"
-    )
-
-  colornams <- lookup[names(cols)]
-}
+#if (HONESTY) {
+#  methodnams <- c(
+#    "mob",  "hybrid", "equalized", "mobcf",
+#    "cf",
+#    "mobhonest", "hybridhonest", "equalizedhonest", "mobcfhonest",
+#    "cfhonest"
+#    )
+#
+#  colornams <- lookup[names(cols)]
+#}
 
 Nna <- sum(is.na(res$result.res))
 # res <- res %>%
