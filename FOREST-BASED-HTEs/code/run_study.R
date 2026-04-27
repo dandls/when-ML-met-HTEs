@@ -8,14 +8,9 @@ source("def.R")
 paste(NumTrees, CORES,  REPL, sep = ", ")
 
 # Load packages and helper functions
-source("../libs.R")
+source("libs.R")
 source("DGP.R")
 source("run.R")
-
-# Check if the file exists
-#if (file.exists(resname)) {
-#  stop("Error: The file 'results/results_study.rds' already exists. Create new study in def.R")
-#}
 
 #-------
 # 1) Setup DGP
@@ -87,10 +82,6 @@ prob.designs$normal <- resdf
 # Functions are defined in run.R
 #-----
 algo.designs <- list()
-# methods <- c(methods, "doubleml")
-# Check if the file exists
-#methods <- c("doubleml", "cf", "equalized")
-# methods <- c("cf")
 print(methods)
 for (method in methods) {
   addAlgorithm(method, fun = eval(parse(text = paste("fun", method, sep = "."))), reg = reg)
@@ -145,12 +136,6 @@ if (!is.null(oldresdf)) {
 }
 
 saveRDS(res, file = resname)
-
-# 9) Plot results
-# source("create_plots_tables.R")
-
-
-
 
 
 
