@@ -1,5 +1,5 @@
 #### Plot results #####
-BERLINRESULTS <- TRUE
+BERLINRESULTS <- FALSE
 
 if (BERLINRESULTS) {
   dml_study_name <- "doubleml"
@@ -40,7 +40,7 @@ plot_results(normalB, scB, ylim = c(-.1, 1.1), cexstrip = 1)
 plot_name <- "results_berlinsettings_subsetted"
 # Specify the file name and dimensions
 # dir.create("plots", showWarnings = FALSE)
-png(file.path("../plots", paste0(plot_name,".png")), width = 650, height = 600)
+png(file.path(paste0(plot_name,".png")), width = 650, height = 600)
 plot_results(normalB, scB, ylim = c(-.1, 50), cexstrip = 1)
 dev.off()
 
